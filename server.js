@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(helmet.frameguard({ action: 'sameorigin' }))// user story #1
 app.use(helmet.dnsPrefetchControl());// user story #2
+app.use(helmet.referrerPolicy({ policy: 'same-origin' }));// user story #3
 
 //Sample front-end
 app.route('/b/:board/')
